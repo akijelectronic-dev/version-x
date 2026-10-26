@@ -1,5 +1,5 @@
 // Cloudflare Worker URL এখানে বসান
-const WORKER_URL = "https://version-x.akijelectronic.workers.dev/";
+const WORKER_URL = "https://version-x1.akijelectronic.workers.dev/";
 
 // লাইভ ইভেন্ট onEvent-এ আসে; শেষে ফেরত দেয় { reply, steps }
 async function askAgent(message, agent = "auto", history = [], signal, onEvent = () => {}, extra = {}) {
