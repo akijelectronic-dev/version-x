@@ -1,0 +1,35 @@
+/* Splash */
+.splash{position:fixed;inset:0;z-index:10;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transition:opacity .6s}
+.splash.hide{opacity:0;pointer-events:none}
+.globe{position:relative;width:120px;height:120px;border-radius:50%;border:2px solid var(--green);box-shadow:var(--glow-g),inset 0 0 24px rgba(0,255,136,.3)}
+.globe span{position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--green);animation:spin 3s linear infinite}
+.globe span:nth-child(1){transform:rotateY(60deg)}
+.globe span:nth-child(2){transform:rotateY(120deg);animation-duration:4s}
+.globe span:nth-child(3){transform:rotateX(75deg);border-color:var(--blue);animation-duration:5s}
+.splash-text{font-family:var(--font-tech);font-size:.85rem;letter-spacing:.2em;color:var(--green);text-shadow:var(--glow-g)}
+.progress{width:min(280px,70vw);height:4px;background:rgba(0,255,136,.15);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue));box-shadow:var(--glow-g);transition:width .2s}
+
+/* Core sphere */
+.sphere{position:absolute;left:68%;top:50%;width:38%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.22) 0%,rgba(0,255,136,.10) 35%,rgba(0,210,255,.05) 65%,rgba(0,255,136,0) 100%);
+  border:1.5px solid rgba(0,255,136,.55);backdrop-filter:blur(1.5px);-webkit-backdrop-filter:blur(1.5px);
+  box-shadow:0 0 28px rgba(0,255,136,.35),inset 0 0 26px rgba(0,255,136,.22);
+  animation:breathe 4s ease-in-out infinite}
+.sphere i{position:absolute;inset:-12%;border-radius:50%;border:1px solid var(--blue);opacity:.7;animation:orbit 8s linear infinite}
+.sphere i:nth-child(2){inset:-22%;border-color:var(--green);animation-duration:12s;animation-direction:reverse;opacity:.4}
+.sphere i:nth-child(3){inset:-30%;border-style:dashed;animation-duration:20s;opacity:.25}
+.sphere.thinking{animation:breathe .8s ease-in-out infinite}
+.links path{animation:flow 1.2s linear infinite}
+.sphere::after{content:"";position:absolute;inset:0;border-radius:50%;background-image:radial-gradient(circle,rgba(0,255,136,.55) 1.2px,transparent 1.6px);background-size:8px 8px;animation:dots 6s linear infinite;-webkit-mask-image:radial-gradient(circle,transparent 30%,#000 100%);mask-image:radial-gradient(circle,transparent 30%,#000 100%)}
+
+@keyframes spin{to{transform:rotateY(360deg)}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes breathe{50%{transform:translate(-50%,-50%) scale(1.07);filter:brightness(1.2)}}
+@keyframes flow{to{stroke-dashoffset:-14}}
+@keyframes dots{to{background-position:64px 0}}
+@keyframes mic-pulse{50%{box-shadow:0 0 30px rgba(255,0,85,.9)}}
+
+@keyframes typing{50%{transform:translateY(-2px)}}
+@keyframes nod{50%{transform:translateY(1.5px)}}
+@keyframes ping{50%{box-shadow:0 0 0 6px rgba(0,210,255,0)}}
